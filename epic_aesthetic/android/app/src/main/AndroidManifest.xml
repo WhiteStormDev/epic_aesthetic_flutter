@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.mtutelyan.epic_aesthetic">
+    package="com.example.epic_aesthetic">
    <application
         android:label="epic_aesthetic"
         android:icon="@mipmap/ic_launcher">

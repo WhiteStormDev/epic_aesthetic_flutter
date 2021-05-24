@@ -1,12 +1,12 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:epic_aesthetic/model/image_model.dart';
-import 'package:epic_aesthetic/model/user_model.dart';
+import 'package:epic_aesthetic/models/image_model.dart';
+import 'package:epic_aesthetic/models/user_model.dart';
 
 class DatabaseService
 {
-  final CollectionReference userCollectionReference =
+  final userCollectionReference =
   FirebaseFirestore.instance.collection('users');
-  final CollectionReference postCollectionReference =
+  final postCollectionReference =
   FirebaseFirestore.instance.collection('images');
 
   Future createUser(UserModel user) async {
@@ -23,9 +23,10 @@ class DatabaseService
 
   Future<UserModel?> getUser(String? id) async {
     UserModel userFromDB;
-    DocumentSnapshot snapshot = await userCollectionReference.doc(id).get();
-    userFromDB = UserModel.fromJson(snapshot.data());
-    return userFromDB;
+    var snapshot = await userCollectionReference.doc(id).get();
+    //userFromDB = UserModel.fromJson(snapshot.data());
+    //return userFromDB;
+    return null;
   }
 
   Future<String?> getUserName(String? id) async {
@@ -36,10 +37,11 @@ class DatabaseService
     return null;
   }
 
-  Future<List<ImageModel>> getPosts() async {
+  Future<List<ImageModel>?> getPosts() async {
     QuerySnapshot snapshot = await postCollectionReference.orderBy("timeStamp").get();
-    return snapshot.docs
-        .map((doc) => ImageModel.fromJson(doc.id, doc.data()))
-        .toList();
+    return null;
+    // return snapshot.docs
+    //     .map((doc) => ImageModel.fromJson(doc.id, doc.data()))
+    //     .toList();
   }
 }

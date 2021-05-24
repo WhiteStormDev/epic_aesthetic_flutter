@@ -1,7 +1,6 @@
-import 'package:epic_aesthetic/model/user_model.dart';
+import 'package:epic_aesthetic/models/user_model.dart';
+import 'package:epic_aesthetic/services/database_service.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-
-import 'database_service.dart';
 
 class AuthenticationService
 {

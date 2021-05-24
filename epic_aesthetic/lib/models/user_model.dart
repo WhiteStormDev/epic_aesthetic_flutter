@@ -11,7 +11,7 @@ class UserModel {
     id = user?.uid;
   }
 
-  UserModel.fromJson(Map<String, dynamic>? values) {
+  UserModel.fromJson(Map<String, dynamic> values) {
     if (values == null)
       return;
 

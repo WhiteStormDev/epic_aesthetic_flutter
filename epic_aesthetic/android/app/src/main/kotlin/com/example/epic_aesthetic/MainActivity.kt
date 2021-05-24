@@ -1,4 +1,4 @@
-package com.mtutelyan.epic_aesthetic
+package com.example.epic_aesthetic
 
 import io.flutter.embedding.android.FlutterActivity
 
